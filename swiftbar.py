@@ -2,7 +2,8 @@
 """SwiftBar output for one device: `swiftbar.py mouse|headset`.
 
 Runs the reader, caches the last good reading, and when the device is asleep/off shows the
-cached value in gray (up to STALE_H hours old) instead of a blank.
+cached value in gray (up to STALE_H hours old) instead of a blank; devices with hide_off
+(the headset) print nothing instead, which hides the icon.
 """
 import json, os, subprocess, sys, time
 
@@ -13,8 +14,9 @@ LOW = 20
 STATUS = {"discharging": "descargando", "charging": "cargando", "charging (slow)": "cargando (lento)",
           "full": "cargado", "error": "error de carga"}
 DEV = {
-    "mouse": {"icon": "computermouse.fill", "label": "Mouse"},
-    "headset": {"icon": "headphones", "label": "Audífonos"},
+    # hide_off: print nothing when the device does not answer, so SwiftBar hides the icon
+    "mouse": {"icon": "computermouse.fill", "label": "Mouse", "hide_off": False},
+    "headset": {"icon": "headphones", "label": "Audífonos", "hide_off": True},
 }
 
 
@@ -40,6 +42,8 @@ def main():
     os.makedirs(CACHE, exist_ok=True)
 
     d, err = read(kind)
+    if err and meta["hide_off"]:
+        return
     if d:
         d["ts"] = time.time()
         tmp = cache + ".tmp"
