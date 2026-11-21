@@ -18,6 +18,8 @@ fi
 chmod +x "$D/run.sh" "$D"/swiftbar/*.sh
 
 defaults write com.ameba.SwiftBar PluginDirectory "$D/swiftbar"
+# hide the "SwiftBar" fallback item when no plugin has anything to show (both devices off)
+defaults write com.ameba.SwiftBar StealthMode -bool YES
 
 RC="$HOME/.zshrc"
 touch "$RC"

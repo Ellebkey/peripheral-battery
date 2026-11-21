@@ -18,7 +18,8 @@ git clone https://github.com/Ellebkey/peripheral-battery.git ~/peripheral-batter
 1. Comprueba `python3` (si falta: `xcode-select --install`).
 2. Instala SwiftBar con Homebrew si no está.
 3. Crea `.venv` con `hidapi`.
-4. Apunta SwiftBar a `swiftbar/` y lo reinicia.
+4. Apunta SwiftBar a `swiftbar/`, activa `StealthMode` (sin él, con los dos aparatos apagados SwiftBar pone su propio
+   texto "SwiftBar" en la barra) y lo reinicia.
 5. Agrega los alias `mouse-battery` y `headset-battery` a `~/.zshrc` (bloque `# >>> peripheral-battery >>>`).
 
 Después: en SwiftBar activa **Launch at Login**. Si en esa Mac no tienes alguno de los dos aparatos, haz clic en su
