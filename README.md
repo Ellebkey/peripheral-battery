@@ -9,14 +9,23 @@ macOS (SwiftBar), y en terminal.
 
 ## Instalar
 
+Requisitos (si ya los tienes, sáltatelos):
+
+```sh
+xcode-select --install            # python3 y git
+brew install --cask swiftbar      # barra de menú (Homebrew: https://brew.sh)
+```
+
+Después:
+
 ```sh
 git clone https://github.com/Ellebkey/peripheral-battery.git ~/peripheral-battery
 ~/peripheral-battery/install.sh
 ```
 
 `install.sh` hace todo y se puede volver a correr:
-1. Comprueba `python3` (si falta: `xcode-select --install`).
-2. Instala SwiftBar con Homebrew si no está.
+1. Comprueba `python3`.
+2. Instala SwiftBar con `brew install --cask swiftbar` si no está (y si no hay Homebrew, se detiene y lo dice).
 3. Crea `.venv` con `hidapi`.
 4. Apunta SwiftBar a `swiftbar/`, activa `StealthMode` (sin él, con los dos aparatos apagados SwiftBar pone su propio
    texto "SwiftBar" en la barra) y lo reinicia.
@@ -25,7 +34,7 @@ git clone https://github.com/Ellebkey/peripheral-battery.git ~/peripheral-batter
 Después: en SwiftBar activa **Launch at Login**. Si en esa Mac no tienes alguno de los dos aparatos, haz clic en su
 ícono → **Disable Plugin**.
 
-Si los íconos se quedan en `–` con el aparato encendido, revisa **Ajustes del Sistema → Privacidad y seguridad →
+Si un ícono no aparece con el aparato encendido (y `mouse-battery` / `headset-battery` sí responden en terminal), revisa **Ajustes del Sistema → Privacidad y seguridad →
 Monitoreo de entrada** y permite SwiftBar (en la Mac donde se armó no hizo falta).
 
 ## Barra de menú
