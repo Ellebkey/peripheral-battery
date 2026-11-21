@@ -28,11 +28,11 @@ Si los íconos se quedan en `–` con el aparato encendido, revisa **Ajustes del
 Monitoreo de entrada** y permite SwiftBar (en la Mac donde se armó no hizo falta).
 
 ## Barra de menú
-- Un plugin por aparato en `swiftbar/`; el refresco va en el nombre (mouse `5m`, audífonos `1m`). Al hacer clic, detalle y "Actualizar".
-- `swiftbar.py <aparato>` corre el lector y guarda la última lectura buena en `~/Library/Caches/peripheral-battery/`.
-  Con el **mouse** dormido o apagado muestra esa lectura **en gris** (hasta 12 h; después `–`). Con los **audífonos**
-  apagados el plugin no imprime nada y SwiftBar oculta el ícono; reaparece en ≤ 1 min al prenderlos. Rojo si ≤ 20 % sin
-  cargar; `⚡` si carga (solo el mouse lo reporta).
+- Un plugin por aparato en `swiftbar/`, refresco cada minuto (el `1m` del nombre). Al hacer clic, detalle y "Actualizar".
+- `swiftbar.py <aparato>` corre el lector. Si el aparato no contesta (apagado, dormido o receptor desconectado) no
+  imprime nada y SwiftBar oculta el ícono; reaparece en ≤ 1 min. Rojo si ≤ 20 % sin cargar; `⚡` si carga (solo el
+  mouse lo reporta).
+- El G502 X se duerme tras unos minutos sin moverlo: su ícono desaparece aunque esté prendido y vuelve al moverlo.
 - En `swiftbar/` solo van plugins: SwiftBar ejecuta todo archivo ejecutable de esa carpeta.
 
 ## Terminal
