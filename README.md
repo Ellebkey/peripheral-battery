@@ -32,7 +32,7 @@ Monitoreo de entrada** y permite SwiftBar (en la Mac donde se armó no hizo falt
 - `swiftbar.py <aparato>` corre el lector. Si el aparato no contesta (apagado, dormido o receptor desconectado) no
   imprime nada y SwiftBar oculta el ícono; reaparece en ≤ 1 min. Rojo si ≤ 20 % sin cargar; `⚡` si carga (solo el
   mouse lo reporta).
-- El G502 X se duerme tras unos minutos sin moverlo: su ícono desaparece aunque esté prendido y vuelve al moverlo.
+- Cuando el G502 X se duerme por no moverlo, su ícono desaparece aunque esté prendido y vuelve al moverlo.
 - En `swiftbar/` solo van plugins: SwiftBar ejecuta todo archivo ejecutable de esa carpeta.
 
 ## Terminal
